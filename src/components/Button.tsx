@@ -10,14 +10,20 @@ interface CustomButtonProps {
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
-  isFilled = false,
-  color,
-  background,
-  size,
+  // color,
+  // background,
+  // size,
   children,
-  isActive,
+  // isFilled = false,
+  // isActive = true,
 }) => {
-  return <button>{children}</button>;
+  return (
+    <button
+      className={`cursor-pointer bg-transparent px-6 py-2 border border-black rounded-full font-medium text-sm text-black`}
+    >
+      {children}
+    </button>
+  );
 };
 
 export default CustomButton;

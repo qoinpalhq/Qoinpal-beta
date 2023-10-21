@@ -1,0 +1,15 @@
+import { CustomButton } from ".";
+
+function Nav() {
+  return (
+    <nav className="w-full flex justify-between items-center pt-12">
+      <div className="">
+        <img src="/src/assets/images/brand/logo.svg" alt="" />
+      </div>
+
+      <CustomButton>Need help?</CustomButton>
+    </nav>
+  );
+}
+
+export default Nav;
