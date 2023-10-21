@@ -17,10 +17,13 @@ function Redirect({
 }: RedirectProps) {
   return (
     <div className={`${className}`}>
-      <p>
+      <p className="w-full flex items-center gap-2">
         <span>{normalText && normalText} </span>
-        <a href={href} className={linkColor}>
-          {linkText} <img src={icon} alt="" />
+        <a href={href} className={`${linkColor} flex gap-2`}>
+          {linkText}{" "}
+          <span className="flex items-center">
+            <img src={icon} alt="" width={"20px"} />
+          </span>
         </a>
       </p>
     </div>
