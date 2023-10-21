@@ -4,15 +4,23 @@ interface RedirectProps {
   linkColor: string;
   normalText?: string;
   className?: string;
+  icon?: string;
 }
 
-function Redirect({ href, linkColor, linkText, normalText }: RedirectProps) {
+function Redirect({
+  href,
+  className,
+  linkColor,
+  linkText,
+  normalText,
+  icon,
+}: RedirectProps) {
   return (
-    <div>
+    <div className={`${className}`}>
       <p>
-        <span>{normalText && normalText}</span>
+        <span>{normalText && normalText} </span>
         <a href={href} className={linkColor}>
-          {linkText}
+          {linkText} <img src={icon} alt="" />
         </a>
       </p>
     </div>

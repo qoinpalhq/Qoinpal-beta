@@ -6,6 +6,7 @@ interface CustomInputProps {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   className?: string;
   value: string;
+  name: string;
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({
@@ -14,10 +15,13 @@ const CustomInput: React.FC<CustomInputProps> = ({
   onChange,
   className,
   value,
+  name,
 }) => {
   return (
     <input
-      className={className}
+      className={`${className} text-center focus:outline-none text-xl font-medium placeholder:text-neutral-6
+      `}
+      name={name}
       value={value}
       type={type}
       placeholder={placeholder}

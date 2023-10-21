@@ -4,22 +4,33 @@ interface CustomButtonProps {
   isFilled?: boolean;
   color?: string;
   background?: string;
-  size?: string;
+  size?: "big" | "small";
   isActive?: boolean;
+  disabled?: boolean;
   children: React.ReactNode;
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
-  // color,
-  // background,
-  // size,
+  color = "text-black",
+  background,
+  size,
   children,
-  // isFilled = false,
-  // isActive = true,
+  isFilled,
+  disabled,
 }) => {
+  function getWidth() {
+    if (size === "big") return "px-24 py-4";
+    return "px-6 py-2";
+  }
+  const bg = disabled
+    ? "bg-neutral-7"
+    : isFilled
+    ? background
+    : "bg-transparent";
+  const border = isFilled ? "none" : "border border-black";
   return (
     <button
-      className={`cursor-pointer bg-transparent px-6 py-2 border border-black rounded-full font-medium text-sm text-black`}
+      className={`cursor-pointer  ${color} ${bg} ${getWidth()} ${border} rounded-full font-medium text-sm text-black`}
     >
       {children}
     </button>

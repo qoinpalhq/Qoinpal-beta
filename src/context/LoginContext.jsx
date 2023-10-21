@@ -13,7 +13,9 @@ export function FormProvider({ children }) {
   });
   const [currSection, setCurrSection] = useState("email");
 
-  const handleInputChange = (name, value) => {
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    console.log("changed", name, value, formData);
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,

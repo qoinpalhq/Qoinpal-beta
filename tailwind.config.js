@@ -3,6 +3,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontSize: {
+        md: "1.125rem",
+        lg: "1.5rem",
+
+        xl: "3.625rem",
+      },
       colors: {
         primary: "#CCFB00",
         secondary: {
@@ -29,8 +35,7 @@ export default {
           7: "#8C8C8C",
           8: "#595959",
         },
-        gray:"#A8A8A8",
-
+        gray: "#A8A8A8",
       },
     },
   },
