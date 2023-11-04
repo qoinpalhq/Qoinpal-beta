@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Welcome from "./pages/onboarding/Welcome";
+// import Welcome from "./pages/onboarding/Welcome";
 import Login from "./pages/onboarding/Login";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route index element={<Login />} />
           {/* <Route path="/login" element={<Login />} /> */}
         </Route>
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );
