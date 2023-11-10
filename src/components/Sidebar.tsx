@@ -8,7 +8,7 @@ import arrowright from "../assets/Images/Icons/arrow-right.svg"
 import logout from "../assets/Images/Icons/login.svg"
 const Sidebar = () => {
     return (
-        <div className="w-[313px] h-[1024px] bg-[#FFFFFF]">
+        <div className="w-[313px] sticky h-screen bg-white overflow-y-auto">
             <div className="flex flex-col">
                 <div className="flex items-center justify-center mt-20 ">
                     <img src={logo} alt="" />
