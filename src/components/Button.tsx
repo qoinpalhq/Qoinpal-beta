@@ -8,14 +8,18 @@ interface CustomButtonProps {
   isActive?: boolean;
   disabled?: boolean;
   children: React.ReactNode;
+  className?: string;
+  textSize?: string;
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
   color = "text-black",
   background,
   size,
+  textSize = "text-sm",
   children,
   isFilled,
+  className,
   disabled,
 }) => {
   function getWidth() {
@@ -30,7 +34,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   const border = isFilled ? "none" : "border border-black";
   return (
     <button
-      className={`cursor-pointer  ${color} ${bg} ${getWidth()} ${border} rounded-full font-medium text-sm text-black`}
+      className={`cursor-pointer ${className}  ${color} ${bg} ${getWidth()} ${border} rounded-full font-medium ${textSize} text-black`}
     >
       {children}
     </button>

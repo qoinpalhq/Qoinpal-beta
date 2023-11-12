@@ -1,15 +1,30 @@
-import { CustomButton, CustomInput, Redirect, Title } from "../components";
+import { CustomButton, CustomInput, PostScript, Title } from "../components";
 import { useFormContext } from "../context/LoginContext";
 import arrow from "../assets/Images/Icons/arrow-right.svg";
 interface FormProps {
   title: string;
   name: string;
+  buttonText: string;
+  href: string;
+  linkText?: string;
+  linkColor?: string;
+  normalText?: string;
+  className?: string;
 }
 
-function Form({ title, name: inputName }: FormProps) {
+function Form({
+  title,
+  name: inputName,
+  buttonText,
+  href,
+  linkText,
+  normalText,
+  linkColor,
+  className,
+}: FormProps) {
   const { formData, handleInputChange } = useFormContext();
   return (
-    <div className="w-full flex flex-col items-center gap-6">
+    <div className={`w-full ${className} flex flex-col items-center gap-6 `}>
       <Title title={title} />
       <CustomInput
         value={formData[inputName]}
@@ -25,13 +40,13 @@ function Form({ title, name: inputName }: FormProps) {
         isFilled
         size="big"
       >
-        Log in
+        {buttonText}
       </CustomButton>
-      <Redirect
-        href="#"
-        linkText="Create an account"
-        normalText="Don't have an account?"
-        linkColor="text-secondary"
+      <PostScript
+        href={href}
+        linkText={linkText}
+        normalText={normalText}
+        linkColor={linkColor}
         className="pt-8"
         icon={arrow}
       />

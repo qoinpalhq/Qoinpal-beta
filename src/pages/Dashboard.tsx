@@ -1,16 +1,15 @@
-import Body from "../components/Body"
-import DashNav from "../components/DashNav"
-import Sidebar from "../components/Sidebar"
+import BodySection from "../components/Dashboard/Body";
+import DashNav from "../components/Nav/DashNav";
+import Sidebar from "../components/Dashboard/Sidebar";
 
 const Dashboard = () => {
-    return (
-        <div className="flex">
-            <Sidebar />
-            <div className="flex flex-col bg-[#d9d6d6]">
-                <DashNav />
-                <Body />
-            </div>
-        </div>
-    )
-}
-export default Dashboard
+  return (
+    <div className="flex font-['Red Hat Display']">
+      <Sidebar />
+      <div className="flex flex-1 flex-col bg-neutral-3">
+        <DashNav /> <BodySection />
+      </div>
+    </div>
+  );
+};
+export default Dashboard;

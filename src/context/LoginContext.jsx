@@ -1,9 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-import {
-  ENTER_DISPLAY_NAME,
-  ENTER_EMAIL,
-  VERIFY_EMAIL,
-} from "../constants/sectionNames";
+import { GET_STARTED, LOGIN, VERIFY_EMAIL } from "../constants/sectionNames";
 const FormContext = createContext();
 
 export function FormProvider({ children }) {
@@ -11,7 +7,7 @@ export function FormProvider({ children }) {
     displayName: "",
     email: "",
   });
-  const [currSection, setCurrSection] = useState("email");
+  const [currSection, setCurrSection] = useState(GET_STARTED);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

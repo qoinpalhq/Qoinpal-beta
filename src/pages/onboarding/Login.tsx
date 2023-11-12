@@ -3,9 +3,12 @@ import { Form } from "../../sections";
 import { useFormContext } from "../../context/LoginContext";
 import {
   ENTER_DISPLAY_NAME,
-  ENTER_EMAIL,
+  GET_STARTED,
+  LOGIN,
   VERIFY_EMAIL,
 } from "../../constants/sectionNames";
+import sections from "./data";
+
 function Login() {
   const { currSection } = useFormContext();
   return (
@@ -16,12 +19,10 @@ function Login() {
           id="body"
           className="w-full flex items-center justify-center min-h-[calc(100vh-80px)]"
         >
-          <div className="w-[60%] flex items-center justify-center ">
-            {currSection === ENTER_EMAIL && (
-              <Form title="Welcome back, Log in here" name="email" />
-            )}
-            {/* {currSection === ENTER_DISPLAY_NAME && <Form />}
-              {currSection === VERIFY_EMAIL && <Form />} */}
+          <div className="w-[60%] flex flex-col items-center justify-center  ">
+            {sections.map((formDataItem, index) => (
+              <Form key={index} {...formDataItem} />
+            ))}
           </div>
         </div>
       </div>
