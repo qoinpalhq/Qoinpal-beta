@@ -2,3 +2,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tooltip-triangle {
+  content: '';
+  position: absolute;
+  left: 100%;
+  margin-left: -55px; 
+  border-width: 15px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
