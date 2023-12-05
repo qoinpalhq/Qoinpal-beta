@@ -1,8 +1,11 @@
+import {Otp} from "/src/components"
+
+
 function App() {
 
   return (
     <>
-      <p>QoinPal Beta</p>
+      <Otp />
     </>
   )
 }
