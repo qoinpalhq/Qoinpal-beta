@@ -35,7 +35,7 @@ const SummaryStatistics: React.FC<SummaryStatisticsProps> = ({statistics}) => {
             <p className="font-bold text-xl">{value}</p>
 
             {index !== statistics.length - 1 && (
-              <div className="absolute right-6 h-full w-[0.5px] top-0 right-0 bg-[#BFBFBF]" />
+              <div className="absolute right-6 h-full w-[0.5px] top-0 bg-[#BFBFBF]" />
             )}
           </div>
         );
