@@ -15,7 +15,7 @@ const SummaryStatistics: React.FC<SummaryStatisticsProps> = ({statistics}) => {
   ];
    
 
-    const iconStyles = ["#F8E8E8", "#EBF9FF", "none"];
+    const iconStyles = ["bg-[#F8E8E8]", "bg-[#EBF9FF]", "bg-none"];
 
   return (
     <div className="flex w-full justify-between mt-section-padding">
@@ -27,7 +27,7 @@ const SummaryStatistics: React.FC<SummaryStatisticsProps> = ({statistics}) => {
                 <img
                   src={icons[index]}
                   alt={`Icon ${index}`}
-                  className={`bg-[${iconStyles[index]}] p-2 rounded-full `}
+                  className={`${iconStyles[index]} p-2 rounded-full `}
                 />
               </span>
               {statTitle}
