@@ -11,6 +11,9 @@ export default {
         lg: "1.5rem",
         xl: "3.625rem",
       },
+      spacing: {
+        "section-padding": "2rem",
+      },
       colors: {
         primary: "#CCFB00",
         secondary: {
@@ -21,7 +24,7 @@ export default {
         success: {
           DEFAULT: "#2CD111",
           50: "#EAFAE7",
-          100: "#FF7A00",
+          100: "#BEF1B5",
           800: "#187309",
         },
         error: {
@@ -37,7 +40,8 @@ export default {
           7: "#8C8C8C",
           8: "#595959",
         },
-        gray: "#A8A8A8",
+        interactiveGray: "#A8A8A8",
+        backgroundGray: "#FAFAFA",
       },
     },
   },
