@@ -1,5 +1,5 @@
-import { Nav } from "../../components";
-import { Form } from "../../sections";
+import Nav from "../../components/Nav/Nav";
+import { Form } from "../../components/Onboarding/sections";
 import { useFormContext } from "../../context/LoginContext";
 import {
   ENTER_DISPLAY_NAME,

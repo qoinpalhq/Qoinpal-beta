@@ -3,7 +3,7 @@ import NGN from "../assets/Images/Icons/NGN.png";
 import tether from "../../assets/Images/Icons/Tether 1.png";
 
 import Input from "./Input";
-import { CustomButton, PostScript } from "..";
+import { CustomButton, PostScript } from "../Utilities";
 function Body() {
   return (
     <div

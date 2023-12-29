@@ -1,4 +1,4 @@
-import { CustomButton } from "../../components";
+import { CustomButton } from "../../components/Utilities";
 import VerificationBanner from "../../components/Banners/VerificationBanner";
 import AssetFlowGraph from "../../components/Dashboard/Graphs/AssetFlowGraph";
 import SummaryStatistics from "../../components/Dashboard/Statistics/SummaryStatistics";
@@ -6,8 +6,7 @@ import DashboardLayout from "../../components/Layouts/DashboardLayout";
 import { graphData } from "../../components/Dashboard/Graphs/Data";
 import { statistics } from "../../components/Dashboard/Statistics/dashboardData";
 import TransactionHistoryTable from "../../components/Dashboard/Tables/TransactionHistoryTable";
-import {transactionsData} from "../../components/Dashboard/Tables/transactionsData";
-
+import { transactionsData } from "../../components/Dashboard/Tables/transactionsData";
 
 const DashboardPage = () => {
   return (

@@ -1,4 +1,4 @@
-import { CustomButton } from "..";
+import { CustomButton } from "../Utilities";
 
 function Nav() {
   return (

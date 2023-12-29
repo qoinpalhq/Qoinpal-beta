@@ -1,6 +1,11 @@
-import { CustomButton, CustomInput, PostScript, Title } from "../components";
-import { useFormContext } from "../context/LoginContext";
-import arrow from "../assets/Images/Icons/arrow-right.svg";
+import {
+  CustomButton,
+  CustomInput,
+  PostScript,
+  Title,
+} from "../../Utilities/index";
+import { useFormContext } from "../../../context/LoginContext";
+import arrow from "../../../assets/Images/Icons/arrow-right.svg";
 interface FormProps {
   title: string;
   name: string;
