@@ -11,7 +11,7 @@ const Sidebar = () => {
       <div className="flex  justify-center flex-col pl-5">
         <SideMenu />
 
-        <div className="flex gap-3  absolute bottom-[8%] text-base font-medium   text-error">
+        <div className="flex gap-3  absolute bottom-[8%] text-base font-medium text-error">
           <span className=" capitalize">Log Out</span>
           <img src={logout} alt={" Log Out"} />
         </div>

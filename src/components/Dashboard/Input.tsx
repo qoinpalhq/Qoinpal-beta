@@ -6,18 +6,15 @@ function Input({ title, icon }) {
   return (
     <div>
       <div className="text-black text-base font-medium">{title}</div>
-
-      <div className="flex w-full bg-white rounded-2xl border border-neutral-5">
+      <div className="flex w-full bg-white rounded-3xl border py-2 border-neutral-5">
         <input
-          className="
-      
-text-black text-lg font-md w-[70%] bg-transparent indent-6"
+          className="text-black text-lg font-md w-[70%] bg-transparent indent-6 outline-none"
           placeholder="900.00"
         />
         <div className="aria-hidden w-1 h-[60px] bg-neutral-4"></div>
         <div className="flex gap-3 self-center">
           <img src={icon} alt="" className="w-6 h-6 items-center ml-6 mt-4" />
-          <span className=" my-4">USDT</span>
+          <span className="my-4">USDT</span>
           <img
             src={arrowdown}
             alt=""
