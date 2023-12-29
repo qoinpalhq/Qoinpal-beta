@@ -1,6 +1,7 @@
 import React from 'react';
 import StatusBadge from '../../Badges/StatusBadge';
 import { Link } from 'react-router-dom';
+import viewReceiptIcon from "../../../assets/Images/Icons/viewReceiptIcon.svg"
 
 interface TransactionHistoryProps {
   transactionHistory: Array<{
@@ -59,7 +60,7 @@ const TransactionHistoryTable:React.FC<TransactionHistoryProps> = ({transactionH
                 <td>{date}</td>
                 <td>{amount}</td>
                 <td>
-                  <Link to={receiptLink}>View Receipt</Link>
+                  <Link to={`receipts/${receiptLink}`} className='flex items-center gap-1'><img src={viewReceiptIcon}/>View Receipt</Link>
                 </td>
               </tr>
             );

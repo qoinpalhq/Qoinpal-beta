@@ -32,7 +32,7 @@ const AssetFlowGraph:React.FC <AssetFlowGraphProps> = ({ graphData }) => {
   };
 
   return (
-    <div className="flex gap-6 w-full my-section-padding h-64">
+    <div className="flex justify-between gap-6 w-full my-section-padding h-64">
       {graphData?.map(({ month, percentage, id, assetAmount }) => {
         return createBar(percentage, month, id, assetAmount);
       })}

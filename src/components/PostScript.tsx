@@ -19,11 +19,11 @@ function PostScript({
 }: PostScriptProps) {
   return (
     <div className={`${className}`}>
-      <p className="w-full flex items-center gap-2">
-        <span>{normalText && normalText} </span>
+      <p className="w-full flex items-center gap-2 text-xs">
+        <span className="text-neutral-7">{normalText && normalText} </span>
         {linkText && (
           <a href={href} className={`${linkColor} flex gap-2`}>
-            {linkText}{" "}
+            {linkText}
             <span className="flex items-center">
               <img src={icon} alt="" width={"20px"} />
             </span>
