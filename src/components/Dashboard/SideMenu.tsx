@@ -13,7 +13,6 @@ function SideMenu() {
               <div className="hover:bg-neutral hover:px-4 transition-background duration-300 ease-in-out w-[fit-content] rounded-3xl cursor-pointer py-2  flex gap-3 ">
                 <img height="1rem" src={item.icon} alt={item.title} />
                 <span className=" capitalize text-black text-base font-medium">
-                  {" "}
                   {item.title}
                 </span>
               </div>

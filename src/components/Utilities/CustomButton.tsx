@@ -10,6 +10,8 @@ interface CustomButtonProps {
   children: React.ReactNode;
   className?: string;
   textSize?: string;
+  onClickFunction?: () => void; // Add type for onClick prop
+  type?: "button" | "submit" | "reset"; // Add type for type prop
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
@@ -21,6 +23,9 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   isFilled,
   className,
   disabled,
+  onClickFunction,
+  type
+  
 }) => {
   function getWidth() {
     if (size === "big") return "px-24 py-4";
@@ -34,7 +39,9 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   const border = isFilled ? "none" : "border border-black";
   return (
     <button
-      className={`cursor-pointer ${className}  ${color} ${bg} ${getWidth()} ${border} rounded-full font-medium ${textSize} text-black`}
+      onClick={onClickFunction} 
+      type={type}
+      className={`cursor-pointer ${className} ${color} ${bg} ${getWidth()} ${border} rounded-full font-medium ${textSize} text-black`}
     >
       {children}
     </button>

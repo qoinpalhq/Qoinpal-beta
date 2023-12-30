@@ -7,10 +7,15 @@ import { graphData } from "../../components/Dashboard/Graphs/Data";
 import { statistics } from "../../components/Dashboard/Statistics/dashboardData";
 import TransactionHistoryTable from "../../components/Dashboard/Tables/TransactionHistoryTable";
 import { transactionsData } from "../../components/Dashboard/Tables/transactionsData";
+import React from "react";
 
-const DashboardPage = () => {
+const DashboardPage: React.FC = () => {
   return (
-    <DashboardLayout showHeader={true}>
+    <DashboardLayout
+      showHeader={true}
+      showSidebar={true}
+      headerType="notification"
+    >
       <VerificationBanner textContent="Verify your Account by doing your KYC" />
       <main className="py-10 px-20">
         <section className="md:flex md:justify-between md:items-center">
