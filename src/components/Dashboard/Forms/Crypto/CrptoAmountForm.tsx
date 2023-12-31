@@ -2,7 +2,7 @@ import React from "react";
 import CurrencyAmountInput from "../../Inputs/CurrencyAmountInput";
 import cryptoCurrencies from "./Data/cryptoCurrencies.js";
 import useSelectInput from "../../../../hooks/useSelectInput.js";
-import CustomButton from "../../../Button.js";
+import CustomButton from "../../../Utilities/CustomButton.js";
 interface CryptoAmountFormProps {
   next:()=>void;
   nextStepLabel:()=>string;

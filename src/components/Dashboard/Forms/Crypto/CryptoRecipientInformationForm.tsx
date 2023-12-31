@@ -3,7 +3,7 @@ import FormField from "../../../Common/Inputs/FormField";
 import SelectInput from "../../../Common/Inputs/SelectInput";
 import { banksData } from "./Data/BankDetails.js";
 import useSelectInput from "../../../../hooks/useSelectInput.js";
-import CustomButton from "../../../Button.js";
+import CustomButton from "../../../Utilities/CustomButton.js";
 
 interface CryptoRecipientInformationProps{
   next:()=>void;
