@@ -1,4 +1,4 @@
-import Nav from "../../components/Nav/Nav";
+import Nav from "../../components/Nav/OnboardingNav";
 import { Form } from "../../components/Onboarding/sections";
 import { useFormContext } from "../../context/LoginContext";
 import {

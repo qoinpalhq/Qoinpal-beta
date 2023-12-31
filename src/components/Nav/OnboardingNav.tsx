@@ -1,6 +1,6 @@
 import { CustomButton } from "../Utilities";
 
-function Nav() {
+function OnboardingNav() {
   return (
     <nav className="w-full flex justify-between items-center pt-10 h-20 ">
       <div className="">
@@ -12,4 +12,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default OnboardingNav;
