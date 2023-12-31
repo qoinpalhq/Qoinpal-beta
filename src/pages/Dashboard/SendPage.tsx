@@ -16,21 +16,49 @@ const SendPage: React.FC = () => {
     setPaymentMethod(newPaymentMethod);
   };
 
-  const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
-    useMultistepForm(() => {
-      if (paymentMethod.toLowerCase() === "crypto") {
-        return [<CrptoAmountForm />, <CryptoRecipientInformationForm />,<SummaryForm/>,<SendForm/>];
-      } else {
-        return [<CashAmountForm />, <CashRecipientInformationForm />];
-      }
-    });
-    
+  const {
+    steps,
+    currentStepIndex,
+    step,
+    isFirstStep,
+    isLastStep,
+    back,
+    next,
+    getNextStepLabel,
+  } = useMultistepForm(() => {
+    if (paymentMethod.toLowerCase() === "crypto") {
+      return [
+        {
+          label: "amount",
+          component: (
+            <CrptoAmountForm
+              next={() => next()}
+              nextStepLabel={() => getNextStepLabel()}
+            />
+          ),
+        },
+        {
+          label: "Recipient Details",
+          component: (
+            <CryptoRecipientInformationForm
+              next={() => next()}
+              nextStepLabel={() => getNextStepLabel()}
+            />
+          ),
+        },
+        { label: "Summary", component: <SummaryForm /> },
+        { component: <SendForm /> },
+      ];
+    } else {
+      return [<CashAmountForm />, <CashRecipientInformationForm />];
+    }
+  });
 
   return (
     <DashboardLayout showHeader={true} showSidebar={true} headerType="progress">
-      <div className="flex justify-center w-full items-center flex-col gap-4">
+      <div className="flex  relative justify-center w-full items-center flex-col gap-4">
         {isFirstStep && (
-          <section className="mt-16 flex w-full justify-center gap-x-20">
+          <section className="mt-20 flex w-full justify-center gap-x-20">
             <CustomButton
               onClickFunction={() => handlePaymentMethodChange("crypto")}
             >
@@ -43,18 +71,25 @@ const SendPage: React.FC = () => {
             </CustomButton>
           </section>
         )}
-        {!isFirstStep && <button onClick={back} className="underline capitalize absolute left-4 cursor-pointer">Back</button>}
+        {!isFirstStep && (
+          <button
+            onClick={back}
+            className="underline flex capitalize absolute left-4 cursor-pointer top-20"
+          >
+            &lt; Back
+          </button>
+        )}
         <section className="flex w-full justify-center mt-10">{step}</section>
-        <div className="w-[60%] mt-10">
+        {/* <div className="w-3/5 mt-10">
           <CustomButton
             onClickFunction={next}
             size="big"
             isFilled={true}
             className="bg-primary w-full"
           >
-            Continue
+            Continue - {getNextStepLabel()}
           </CustomButton>
-        </div>
+        </div> */}
         {isFirstStep && (
           <PostScript normalText="By checking this box, I acknowledge and agree to the terms and services on behalf of Qoinpal" />
         )}

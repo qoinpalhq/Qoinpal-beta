@@ -1,4 +1,3 @@
-import React from "react";
 import arrowdown from "../../assets/Images/Icons/arrow-down.svg";
 import infoCircle from "../../assets/Images/Icons/info-circle.svg";
 

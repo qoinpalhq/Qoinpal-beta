@@ -1,45 +1,49 @@
-import React, { useState } from 'react'
-interface CurrencyOption {
-  id: string;
-  name: string;
-  logo?: string;
-}
+import React from "react";
+
+
 interface SelectInputProps {
-  options: CurrencyOption[];
-  selectedCurrency: string;
-  onSelectCurrency: (currency: string) => void;
+  options: [{ id: string | number; name: string; logo?: string }];
+  selectedOption: string;
   size?: "small" | "medium" | "large";
   backgroundColor?: string;
   hasBorder?: boolean;
   isRounded?: boolean;
   customClassName?: string;
+  hasIcon?: boolean;
+  dropdownVisible: boolean;
+  handleSelect;
+  toggleDropdown;
+  hasLabel?: boolean;
+  labelText?: string;
+  customInputClass?: string;
 }
 
-const SelectInput:React.FC<SelectInputProps> = ({
+const SelectInput: React.FC<SelectInputProps> = ({
   options,
-  selectedCurrency,
-  onSelectCurrency,
-  size = 'medium',
-  backgroundColor = 'white',
+  selectedOption,
+  size = "medium",
+  backgroundColor = "white",
   hasBorder = true,
   isRounded = true,
-  customClassName = ""
+  customClassName = "",
+  hasIcon = false,
+  handleSelect,
+  toggleDropdown,
+  dropdownVisible,
+  hasLabel = false,
+  labelText,
+  customInputClass,
 }) => {
-
-  const [dropdownVisible, setDropdownVisible] = useState <boolean > (false);
-  const handleSelect = (currency: string) => {
-    setDropdownVisible(false);
-    onSelectCurrency(currency);
-  };
-
-  const containerClasses = `relative inline-block text-left ${customClassName}`;
-  const buttonClasses = `inline-flex justify-center items-center w-full px-4 py-2 gap-1 text-lg font-medium focus:outline-none ${sizeClasses()} ${borderClasses()} ${roundedClasses()} ${backgroundColor}`;
-  const dropdownClasses = `origin-top-right bg-white absolute left-0 mt-5 z-50 w-48 ${roundedClasses()}`;
+  const containerClasses = `relative inline-block text-left flex-1 ${customClassName}`;
+  const buttonClasses = `${customInputClass} inline-flex justify-center items-center w-full px-4 py-2 gap-1 text-lg font-medium focus:outline-primary-800 ${sizeClasses()} ${borderClasses()} ${roundedClasses()} ${backgroundColor}`;
+  const dropdownClasses = `origin-top-right bg-white absolute left-0 mt-2 z-50 w-full ${roundedClasses()}`;
 
   function sizeClasses() {
     switch (size) {
       case "small":
         return "text-sm";
+      case "medium":
+        return "text-md";
       case "large":
         return "text-xl";
       default:
@@ -57,26 +61,36 @@ const SelectInput:React.FC<SelectInputProps> = ({
 
   return (
     <div className={containerClasses}>
+      {hasLabel && <label className="text-neutral-8">{labelText}</label>}
       <div>
         <button
           type="button"
-          className={buttonClasses}
-          onClick={() => setDropdownVisible(!dropdownVisible)}
+          className={`${buttonClasses} ${hasLabel && "mt-2"}`}
+          onClick={toggleDropdown}
         >
           <div
-            className={`flex gap-x-1 items-center ${
+            className={`flex gap-x-1 justify-between w-full items-center ${
               backgroundColor !== "white" ? "text-white" : ""
             }`}
           >
-            <img
-              src={
-                options?.find((option) => option.name === selectedCurrency)?.logo
-              }
-              className="w-8 h-8"
-            />
-            <p className="overflow-hidden whitespace-nowrap text-ellipsis">
-              {selectedCurrency}
-            </p>
+            <div className="flex items-center gap-x-2">
+              {hasIcon && (
+                <img
+                  src={
+                    options?.find((option) => option.name === selectedOption)
+                      ?.logo
+                  }
+                  className="w-8 h-8"
+                />
+              )}
+
+              <p
+                className={`overflow-hidden whitespace-nowrap text-ellipsis text-md`}
+              >
+                {selectedOption}
+              </p>
+            </div>
+
             <svg
               width="18"
               height="19"
@@ -98,14 +112,15 @@ const SelectInput:React.FC<SelectInputProps> = ({
       </div>
       {dropdownVisible && (
         <div className={dropdownClasses}>
-          <div className="py-1">
+          <div className="py-1 max-h-60 overflow-scroll">
             {options?.map(({ id, name, logo }) => (
               <div
                 key={id}
                 className="px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 cursor-pointer flex gap-2"
                 onClick={() => handleSelect(name)}
               >
-                <img src={logo} className="w-6 h-6" />
+                {hasIcon && <img src={logo} className="w-6 h-6" />}
+
                 <p>{name}</p>
               </div>
             ))}
@@ -114,6 +129,6 @@ const SelectInput:React.FC<SelectInputProps> = ({
       )}
     </div>
   );
-}
+};
 
-export default SelectInput
+export default SelectInput;

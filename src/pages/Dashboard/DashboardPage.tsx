@@ -8,10 +8,13 @@ import { statistics } from "../../components/Dashboard/Statistics/dashboardData"
 import TransactionHistoryTable from "../../components/Dashboard/Tables/TransactionHistoryTable";
 import {transactionsData} from "../../components/Dashboard/Tables/transactionsData";
 import React from "react";
-
 const DashboardPage:React.FC = () => {
   return (
-    <DashboardLayout showHeader={true} showSidebar={true} headerType="notification">
+    <DashboardLayout
+      showHeader={true}
+      showSidebar={true}
+      headerType="notification"
+    >
       <VerificationBanner textContent="Verify your Account by doing your KYC" />
       <main className="py-10 px-20">
         <section className="md:flex md:justify-between md:items-center">
@@ -22,7 +25,10 @@ const DashboardPage:React.FC = () => {
           </div>
           <div className="flex gap-4">
             <CustomButton>Generate Invoice</CustomButton>
-            <CustomButton isFilled={true} background="bg-primary">
+            <CustomButton
+              isFilled={true}
+              background="bg-primary"
+            >
               Send Money
             </CustomButton>
           </div>
@@ -35,7 +41,7 @@ const DashboardPage:React.FC = () => {
           <p className=" text-xs">Asset Flow</p>
           <div className="flex justify-between items-center">
             <p className="text-[34px] flex items-center font-bold">
-              $ 15,000{" "}
+              $ 15,000
               <span className="text-sm text-success bg-success-100 mx-1 px-2 py-1 rounded-full">
                 +2.4%
               </span>
