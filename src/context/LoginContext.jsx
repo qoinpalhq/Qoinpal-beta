@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-import { GET_STARTED, LOGIN, VERIFY_EMAIL } from "../constants/sectionNames";
+
 const FormContext = createContext();
 
 export function FormProvider({ children }) {
@@ -7,7 +7,7 @@ export function FormProvider({ children }) {
     displayName: "",
     email: "",
   });
-  const [currSection, setCurrSection] = useState(GET_STARTED);
+  const [currSection, setCurrSection] = useState(1);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -17,6 +17,7 @@ export function FormProvider({ children }) {
       [name]: value,
     }));
   };
+  
   return (
     <FormContext.Provider value={{ currSection, formData, handleInputChange }}>
       {children}

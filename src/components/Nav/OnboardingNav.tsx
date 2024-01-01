@@ -1,13 +1,21 @@
-import { CustomButton } from "../Utilities";
+import { CustomButton } from "../Common";
 
-function OnboardingNav() {
+interface navProps {
+  type?: "center" | "wide";
+}
+
+function OnboardingNav({ type }: navProps) {
+  const justify = type === "center" ? "justify-center" : "justify-between";
   return (
-    <nav className="w-full flex justify-between items-center pt-10 h-20 ">
+    <nav
+      className={`w-full flex ${justify} 
+    
+    items-center pt-10 h-20 `}
+    >
       <div className="">
-        <img src="/src/assets/images/brand/logo.svg" alt="" />
+        <img src="/src/assets/Images/brand/logo.svg" alt="" />
       </div>
-
-      <CustomButton>Need help?</CustomButton>
+      {type !== "center" && <CustomButton>Need help?</CustomButton>}
     </nav>
   );
 }

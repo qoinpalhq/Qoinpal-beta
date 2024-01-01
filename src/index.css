@@ -12,3 +12,15 @@
   border-style: solid;
   border-color: black transparent transparent transparent;
 }
+
+@font-face {
+  font-family: 'CaraphicScript_PERSONAL_USE_ONLY';
+  src: url('./assets/fonts/CaraphicScript_PERSONAL_USE_ONLY') format('otf');
+  /* Add additional font formats if needed, like woff, ttf, etc. */
+}
+
+/* Apply the custom font to an element */
+.script-font {
+  font-family: 'CaraphicScript_PERSONAL_USE_ONLY', sans-serif;
+}
+

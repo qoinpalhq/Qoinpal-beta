@@ -1,4 +1,4 @@
-import { CustomButton } from "../../components/Utilities";
+import { CustomButton } from "../../components/Common";
 import VerificationBanner from "../../components/Banners/VerificationBanner";
 import AssetFlowGraph from "../../components/Dashboard/Graphs/AssetFlowGraph";
 import SummaryStatistics from "../../components/Dashboard/Statistics/SummaryStatistics";

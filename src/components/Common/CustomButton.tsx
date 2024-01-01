@@ -41,7 +41,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
     <button
       onClick={onClickFunction} 
       type={type}
-      className={`cursor-pointer ${className} ${color} ${bg} ${getWidth()} ${border} rounded-full font-medium ${textSize} text-black`}
+      className={`cursor-pointer ${className} ${color} ${bg} ${getWidth()} ${border} rounded-full font-medium ${textSize} ${color}`}
     >
       {children}
     </button>
