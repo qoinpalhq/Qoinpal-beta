@@ -8,6 +8,7 @@ import { statistics } from "../../components/Dashboard/Statistics/dashboardData"
 import TransactionHistoryTable from "../../components/Dashboard/Tables/TransactionHistoryTable";
 import { transactionsData } from "../../components/Dashboard/Tables/transactionsData";
 import React from "react";
+import Username from "../../components/Common/Texts/Username";
 const DashboardPage: React.FC = () => {
   return (
     <DashboardLayout
@@ -20,7 +21,7 @@ const DashboardPage: React.FC = () => {
         <section className="md:flex md:justify-between md:items-center">
           <div>
             <p className="text-lg">
-              Welcome Back,<span> $johndoe</span>
+              Welcome Back,<Username username="johndoe" size="large"/>
             </p>
           </div>
           <div className="flex gap-4">

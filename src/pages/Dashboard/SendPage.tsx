@@ -46,7 +46,10 @@ const SendPage: React.FC = () => {
             />
           ),
         },
-        { label: "Summary", component: <SummaryForm /> },
+        {
+          label: "Summary",
+          component: <SummaryForm amountToPay={906.2} next={() => next()} />,
+        },
         { component: <SendForm /> },
       ];
     } else {
@@ -80,16 +83,6 @@ const SendPage: React.FC = () => {
           </button>
         )}
         <section className="flex w-full justify-center mt-10">{step}</section>
-        {/* <div className="w-3/5 mt-10">
-          <CustomButton
-            onClickFunction={next}
-            size="big"
-            isFilled={true}
-            className="bg-primary w-full"
-          >
-            Continue - {getNextStepLabel()}
-          </CustomButton>
-        </div> */}
         {isFirstStep && (
           <PostScript normalText="By checking this box, I acknowledge and agree to the terms and services on behalf of Qoinpal" />
         )}

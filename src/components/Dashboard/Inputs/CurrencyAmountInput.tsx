@@ -1,6 +1,6 @@
 import React from "react";
-import infoCircle from "../../../assets/Images/Icons/info-circle.svg";
 import SelectInput from "../../Common/Inputs/SelectInput";
+import InfoTextWithIcon from "../../../components/Common/Texts/InfoTextWithIcon";
 
 interface CurrencyAmountInputProps {
   cryptoCurrencies: [{id:number|string,name:string,logo?:string}];
@@ -45,12 +45,7 @@ const CurrencyAmountInput: React.FC<CurrencyAmountInputProps> = ({
         />
       </div>
       <div className="mt-4 px-8 flex justify-between items-center">
-        <p className=" inline-flex items-center gap-2">
-          {infoLabel}
-          <span>
-            <img src={infoCircle} />
-          </span>
-        </p>
+        <InfoTextWithIcon text={infoLabel}/>
         <p className="text-neutral-8">
           {type === "sender" ? "1 USDT = NGN 980" : "$6.2"}
         </p>
