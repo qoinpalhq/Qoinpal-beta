@@ -8,7 +8,7 @@ import { statistics } from "../../components/Dashboard/Statistics/dashboardData"
 import TransactionHistoryTable from "../../components/Dashboard/Tables/TransactionHistoryTable";
 import { transactionsData } from "../../components/Dashboard/Tables/transactionsData";
 import React from "react";
-
+import Username from "../../components/Common/Texts/Username";
 const DashboardPage: React.FC = () => {
   return (
     <DashboardLayout
@@ -21,12 +21,15 @@ const DashboardPage: React.FC = () => {
         <section className="md:flex md:justify-between md:items-center">
           <div>
             <p className="text-lg">
-              Welcome Back,<span> $johndoe</span>
+              Welcome Back,<Username username="johndoe" size="large"/>
             </p>
           </div>
           <div className="flex gap-4">
             <CustomButton>Generate Invoice</CustomButton>
-            <CustomButton isFilled={true} background="bg-primary">
+            <CustomButton
+              isFilled={true}
+              background="bg-primary"
+            >
               Send Money
             </CustomButton>
           </div>
@@ -39,7 +42,7 @@ const DashboardPage: React.FC = () => {
           <p className=" text-xs">Asset Flow</p>
           <div className="flex justify-between items-center">
             <p className="text-[34px] flex items-center font-bold">
-              $ 15,000{" "}
+              $ 15,000
               <span className="text-sm text-success bg-success-100 mx-1 px-2 py-1 rounded-full">
                 +2.4%
               </span>

@@ -13,9 +13,13 @@ export default {
       },
       spacing: {
         "section-padding": "2rem",
+        70:"70%"
       },
       colors: {
-        primary: "#CCFB00",
+        primary:{
+          DEFAULT:"#CCFB00",
+          800:"#708A00"
+        },
         secondary: {
           DEFAULT: "#FF7A00",
           50: "#FFF2E6",
@@ -42,6 +46,7 @@ export default {
         },
         interactiveGray: "#A8A8A8",
         backgroundGray: "#FAFAFA",
+        backgroundElevation: "#CFCFCF",
       },
     },
   },

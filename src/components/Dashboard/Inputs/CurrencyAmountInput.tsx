@@ -1,24 +1,28 @@
 import React from "react";
-import infoCircle from "../../../assets/Images/Icons/info-circle.svg";
 import SelectInput from "../../Common/Inputs/SelectInput";
+import InfoTextWithIcon from "../../../components/Common/Texts/InfoTextWithIcon";
 
 interface CurrencyAmountInputProps {
-  cryptoCurrencies: [];
+  cryptoCurrencies: [{id:number|string,name:string,logo?:string}];
   selectedCurrency: string;
   handleSelect: (currency: string) => void;
   type: "sender" | "receiver";
   placeholder: string;
+  dropdownVisible: boolean,
+  toogleDropdown:()=>void,
 }
 const CurrencyAmountInput: React.FC<CurrencyAmountInputProps> = ({
   type,
   cryptoCurrencies,
   selectedCurrency,
   handleSelect,
-  placeholder
+  placeholder,
+  dropdownVisible,
+  toogleDropdown,
 }) => {
-    const label =
-      type === "sender" ? "You send exactly" : "The recipient receives";
-    const infoLabel = type === "sender" ? "Exchange Rate" : "Transaction Fee";
+  const label =
+    type === "sender" ? "You send exactly" : "The recipient receives";
+  const infoLabel = type === "sender" ? "Exchange Rate" : "Transaction Fee";
   return (
     <div className=" w-full max-w-[626px]">
       <label className="pl-4 font-medium text-base">{label}</label>
@@ -30,20 +34,21 @@ const CurrencyAmountInput: React.FC<CurrencyAmountInputProps> = ({
         />
         <SelectInput
           options={cryptoCurrencies}
-          selectedCurrency={selectedCurrency}
-          onSelectCurrency={handleSelect}
+          selectedOption={selectedCurrency}
           hasBorder={false}
           customClassName="border-l border-neutral-6 w-[30%]"
+          hasIcon={true}
+          dropdownVisible={dropdownVisible}
+          handleSelect={handleSelect}
+          toggleDropdown={toogleDropdown}
+          size="large"
         />
       </div>
       <div className="mt-4 px-8 flex justify-between items-center">
-        <p className=" inline-flex items-center gap-2">
-          {infoLabel}
-          <span>
-            <img src={infoCircle} />
-          </span>
+        <InfoTextWithIcon text={infoLabel}/>
+        <p className="text-neutral-8">
+          {type === "sender" ? "1 USDT = NGN 980" : "$6.2"}
         </p>
-        <p className="text-neutral-8">{type === "sender" ? "1 USDT = NGN 980" :"$6.2"}</p>
       </div>
     </div>
   );
