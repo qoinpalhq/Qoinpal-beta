@@ -1,27 +1,32 @@
 import {
   CustomButton,
-  CustomInput,
   PostScript,
   Title,
-} from "../../Utilities/index";
-import { useFormContext } from "../../../context/LoginContext";
-import arrow from "../../../assets/Images/Icons/arrow-right.svg";
+} from "../Common";
+import CustomInput from "../Common/Inputs/CustomTextInput";
+import { useFormContext } from "../../context/LoginContext";
+import arrow from "../../assets/Images/Icons/arrow-right.svg";
+import Link from "react-router-dom"
 interface FormProps {
   title: string;
   name: string;
   buttonText: string;
-  href: string;
+  handleClick?: () => void;
+  href?: string;
+  to? : string;
   linkText?: string;
   linkColor?: string;
   normalText?: string;
   className?: string;
 }
 
-function Form({
+function OnboardingForm({
   title,
   name: inputName,
   buttonText,
-  href,
+  handleClick,
+   href,
+   to,
   linkText,
   normalText,
   linkColor,
@@ -38,17 +43,23 @@ function Form({
         type="text"
         onChange={handleInputChange}
       />
+      
+    
       <CustomButton
         disabled={!formData[inputName]}
         color={!formData[inputName] ? "text-white" : "text-black"}
         background="bg-primary"
         isFilled
         size="big"
+        onClickFunction = {handleClick}
       >
         {buttonText}
       </CustomButton>
+      
+  
       <PostScript
-        href={href}
+    
+        to = {to}
         linkText={linkText}
         normalText={normalText}
         linkColor={linkColor}
@@ -59,4 +70,4 @@ function Form({
   );
 }
 
-export default Form;
+export default OnboardingForm;

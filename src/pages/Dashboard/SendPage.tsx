@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import DashboardLayout from "../../components/Layouts/DashboardLayout";
-import { CustomButton, PostScript } from "../../components/Utilities";
+import { CustomButton, PostScript } from "../../components/Common";
 import useMultistepForm from "../../hooks/useMultistepForm";
 import CrptoAmountForm from "../../components/Dashboard/Forms/Crypto/CrptoAmountForm";
 import CryptoRecipientInformationForm from "../../components/Dashboard/Forms/Crypto/CryptoRecipientInformationForm";

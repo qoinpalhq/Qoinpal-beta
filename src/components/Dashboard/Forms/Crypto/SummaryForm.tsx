@@ -4,7 +4,7 @@ import bankIcon from "../../../../assets/Images/Icons/bankOutline.svg";
 import InfoTextWithIcon from "../../../Common/Texts/InfoTextWithIcon";
 import transactionSummary from "./Data/TransactionSummary";
 import Username from "../../../Common/Texts/Username";
-import { CustomButton } from "../../../Utilities";
+import { CustomButton } from "../../../Common";
 
 interface SummaryFormProps{
   amountToPay: number,
